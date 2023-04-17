@@ -9,16 +9,17 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./src:/var/www/html/
+      - ./crm7:/var/www/html/
 
-  db:
-    image: mysql
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: example
-    volumes:
-      - mysql-data:/var/lib/mysql
+  # db:
+  #   image: mysql
+  #   command: --default-authentication-plugin=mysql_native_password
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: example
+  #   volumes:
+  #     - mysql-data:/var/lib/mysql
+  #     - ./db:/mnt/db/
 
   adminer:
     image: adminer
@@ -26,5 +27,5 @@ services:
     ports:
       - 3000:8080
 
-volumes:
-  mysql-data:
+# volumes:
+#   mysql-data:
